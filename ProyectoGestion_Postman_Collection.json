@@ -299,14 +299,14 @@
       "name": "INTEGRANTE 2 - Gestión Inventario",
       "item": [
         {
-          "name": "Almacenes (8095)",
+          "name": "Almacenes (8086)",
           "item": [
             {
               "name": "GET Listar almacenes",
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8095/api/v1/almacenes", "protocol": "http", "host": ["localhost"], "port": "8095", "path": ["api", "v1", "almacenes"] }
+                "url": { "raw": "http://localhost:8086/api/v1/almacenes", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "almacenes"] }
               }
             },
             {
@@ -314,7 +314,7 @@
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8095/api/v1/almacenes/1", "protocol": "http", "host": ["localhost"], "port": "8095", "path": ["api", "v1", "almacenes", "1"] }
+                "url": { "raw": "http://localhost:8086/api/v1/almacenes/1", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "almacenes", "1"] }
               }
             },
             {
@@ -329,7 +329,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"nombre\": \"Almacen Central\",\n  \"ubicacion\": \"Calle Mayor 10\"\n}"
                 },
-                "url": { "raw": "http://localhost:8095/api/v1/almacenes", "protocol": "http", "host": ["localhost"], "port": "8095", "path": ["api", "v1", "almacenes"] }
+                "url": { "raw": "http://localhost:8086/api/v1/almacenes", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "almacenes"] }
               }
             },
             {
@@ -344,7 +344,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"nombre\": \"Almacen Norte\",\n  \"ubicacion\": \"Av. Norte 5\"\n}"
                 },
-                "url": { "raw": "http://localhost:8095/api/v1/almacenes/1", "protocol": "http", "host": ["localhost"], "port": "8095", "path": ["api", "v1", "almacenes", "1"] }
+                "url": { "raw": "http://localhost:8086/api/v1/almacenes/1", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "almacenes", "1"] }
               }
             },
             {
@@ -352,20 +352,20 @@
               "request": {
                 "method": "DELETE",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8095/api/v1/almacenes/1", "protocol": "http", "host": ["localhost"], "port": "8095", "path": ["api", "v1", "almacenes", "1"] }
+                "url": { "raw": "http://localhost:8086/api/v1/almacenes/1", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "almacenes", "1"] }
               }
             }
           ]
         },
         {
-          "name": "Existencias (8096)",
+          "name": "Existencias (8087)",
           "item": [
             {
               "name": "GET Listar existencias",
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8096/api/v1/existencias", "protocol": "http", "host": ["localhost"], "port": "8096", "path": ["api", "v1", "existencias"] }
+                "url": { "raw": "http://localhost:8087/api/v1/existencias", "protocol": "http", "host": ["localhost"], "port": "8087", "path": ["api", "v1", "existencias"] }
               }
             },
             {
@@ -373,7 +373,7 @@
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8096/api/v1/existencias/1", "protocol": "http", "host": ["localhost"], "port": "8096", "path": ["api", "v1", "existencias", "1"] }
+                "url": { "raw": "http://localhost:8087/api/v1/existencias/1", "protocol": "http", "host": ["localhost"], "port": "8087", "path": ["api", "v1", "existencias", "1"] }
               }
             },
             {
@@ -388,7 +388,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"referencia\": \"REF-001\",\n  \"cantidad\": 100.00\n}"
                 },
-                "url": { "raw": "http://localhost:8096/api/v1/existencias", "protocol": "http", "host": ["localhost"], "port": "8096", "path": ["api", "v1", "existencias"] }
+                "url": { "raw": "http://localhost:8087/api/v1/existencias", "protocol": "http", "host": ["localhost"], "port": "8087", "path": ["api", "v1", "existencias"] }
               }
             },
             {
@@ -403,7 +403,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"referencia\": \"REF-001\",\n  \"cantidad\": 200.00\n}"
                 },
-                "url": { "raw": "http://localhost:8096/api/v1/existencias/1", "protocol": "http", "host": ["localhost"], "port": "8096", "path": ["api", "v1", "existencias", "1"] }
+                "url": { "raw": "http://localhost:8087/api/v1/existencias/1", "protocol": "http", "host": ["localhost"], "port": "8087", "path": ["api", "v1", "existencias", "1"] }
               }
             },
             {
@@ -411,20 +411,20 @@
               "request": {
                 "method": "DELETE",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8096/api/v1/existencias/1", "protocol": "http", "host": ["localhost"], "port": "8096", "path": ["api", "v1", "existencias", "1"] }
+                "url": { "raw": "http://localhost:8087/api/v1/existencias/1", "protocol": "http", "host": ["localhost"], "port": "8087", "path": ["api", "v1", "existencias", "1"] }
               }
             }
           ]
         },
         {
-          "name": "Ordenes de Compra (8097)",
+          "name": "Ordenes de Compra (8088)",
           "item": [
             {
               "name": "GET Listar ordenes de compra",
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8097/api/v1/ordenescompra", "protocol": "http", "host": ["localhost"], "port": "8097", "path": ["api", "v1", "ordenescompra"] }
+                "url": { "raw": "http://localhost:8088/api/v1/ordenescompra", "protocol": "http", "host": ["localhost"], "port": "8088", "path": ["api", "v1", "ordenescompra"] }
               }
             },
             {
@@ -432,7 +432,7 @@
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8097/api/v1/ordenescompra/1", "protocol": "http", "host": ["localhost"], "port": "8097", "path": ["api", "v1", "ordenescompra", "1"] }
+                "url": { "raw": "http://localhost:8088/api/v1/ordenescompra/1", "protocol": "http", "host": ["localhost"], "port": "8088", "path": ["api", "v1", "ordenescompra", "1"] }
               }
             },
             {
@@ -447,7 +447,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"numero\": \"OC-2024-001\",\n  \"estado\": \"PENDIENTE\",\n  \"proveedorId\": 1\n}"
                 },
-                "url": { "raw": "http://localhost:8097/api/v1/ordenescompra", "protocol": "http", "host": ["localhost"], "port": "8097", "path": ["api", "v1", "ordenescompra"] }
+                "url": { "raw": "http://localhost:8088/api/v1/ordenescompra", "protocol": "http", "host": ["localhost"], "port": "8088", "path": ["api", "v1", "ordenescompra"] }
               }
             },
             {
@@ -462,7 +462,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"numero\": \"OC-2024-001\",\n  \"estado\": \"APROBADA\",\n  \"proveedorId\": 1\n}"
                 },
-                "url": { "raw": "http://localhost:8097/api/v1/ordenescompra/1", "protocol": "http", "host": ["localhost"], "port": "8097", "path": ["api", "v1", "ordenescompra", "1"] }
+                "url": { "raw": "http://localhost:8088/api/v1/ordenescompra/1", "protocol": "http", "host": ["localhost"], "port": "8088", "path": ["api", "v1", "ordenescompra", "1"] }
               }
             },
             {
@@ -470,20 +470,20 @@
               "request": {
                 "method": "DELETE",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8097/api/v1/ordenescompra/1", "protocol": "http", "host": ["localhost"], "port": "8097", "path": ["api", "v1", "ordenescompra", "1"] }
+                "url": { "raw": "http://localhost:8088/api/v1/ordenescompra/1", "protocol": "http", "host": ["localhost"], "port": "8088", "path": ["api", "v1", "ordenescompra", "1"] }
               }
             }
           ]
         },
         {
-          "name": "Productos (8098)",
+          "name": "Productos (8089)",
           "item": [
             {
               "name": "GET Listar productos",
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8098/api/v1/productos", "protocol": "http", "host": ["localhost"], "port": "8098", "path": ["api", "v1", "productos"] }
+                "url": { "raw": "http://localhost:8089/api/v1/productos", "protocol": "http", "host": ["localhost"], "port": "8089", "path": ["api", "v1", "productos"] }
               }
             },
             {
@@ -491,7 +491,7 @@
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8098/api/v1/productos/1", "protocol": "http", "host": ["localhost"], "port": "8098", "path": ["api", "v1", "productos", "1"] }
+                "url": { "raw": "http://localhost:8089/api/v1/productos/1", "protocol": "http", "host": ["localhost"], "port": "8089", "path": ["api", "v1", "productos", "1"] }
               }
             },
             {
@@ -506,7 +506,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"nombre\": \"Laptop Pro\",\n  \"codigo\": \"LAP-001\"\n}"
                 },
-                "url": { "raw": "http://localhost:8098/api/v1/productos", "protocol": "http", "host": ["localhost"], "port": "8098", "path": ["api", "v1", "productos"] }
+                "url": { "raw": "http://localhost:8089/api/v1/productos", "protocol": "http", "host": ["localhost"], "port": "8089", "path": ["api", "v1", "productos"] }
               }
             },
             {
@@ -521,7 +521,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"nombre\": \"Laptop Pro X\",\n  \"codigo\": \"LAP-002\"\n}"
                 },
-                "url": { "raw": "http://localhost:8098/api/v1/productos/1", "protocol": "http", "host": ["localhost"], "port": "8098", "path": ["api", "v1", "productos", "1"] }
+                "url": { "raw": "http://localhost:8089/api/v1/productos/1", "protocol": "http", "host": ["localhost"], "port": "8089", "path": ["api", "v1", "productos", "1"] }
               }
             },
             {
@@ -529,20 +529,20 @@
               "request": {
                 "method": "DELETE",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8098/api/v1/productos/1", "protocol": "http", "host": ["localhost"], "port": "8098", "path": ["api", "v1", "productos", "1"] }
+                "url": { "raw": "http://localhost:8089/api/v1/productos/1", "protocol": "http", "host": ["localhost"], "port": "8089", "path": ["api", "v1", "productos", "1"] }
               }
             }
           ]
         },
         {
-          "name": "Proveedores (8099)",
+          "name": "Proveedores (8090)",
           "item": [
             {
               "name": "GET Listar proveedores",
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8099/api/v1/proveedores", "protocol": "http", "host": ["localhost"], "port": "8099", "path": ["api", "v1", "proveedores"] }
+                "url": { "raw": "http://localhost:8090/api/v1/proveedores", "protocol": "http", "host": ["localhost"], "port": "8090", "path": ["api", "v1", "proveedores"] }
               }
             },
             {
@@ -550,7 +550,7 @@
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8099/api/v1/proveedores/1", "protocol": "http", "host": ["localhost"], "port": "8099", "path": ["api", "v1", "proveedores", "1"] }
+                "url": { "raw": "http://localhost:8090/api/v1/proveedores/1", "protocol": "http", "host": ["localhost"], "port": "8090", "path": ["api", "v1", "proveedores", "1"] }
               }
             },
             {
@@ -565,7 +565,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"nombre\": \"Proveedor ABC\",\n  \"nif\": \"B12345678\"\n}"
                 },
-                "url": { "raw": "http://localhost:8099/api/v1/proveedores", "protocol": "http", "host": ["localhost"], "port": "8099", "path": ["api", "v1", "proveedores"] }
+                "url": { "raw": "http://localhost:8090/api/v1/proveedores", "protocol": "http", "host": ["localhost"], "port": "8090", "path": ["api", "v1", "proveedores"] }
               }
             },
             {
@@ -580,7 +580,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"nombre\": \"Proveedor XYZ\",\n  \"nif\": \"C99999999\"\n}"
                 },
-                "url": { "raw": "http://localhost:8099/api/v1/proveedores/1", "protocol": "http", "host": ["localhost"], "port": "8099", "path": ["api", "v1", "proveedores", "1"] }
+                "url": { "raw": "http://localhost:8090/api/v1/proveedores/1", "protocol": "http", "host": ["localhost"], "port": "8090", "path": ["api", "v1", "proveedores", "1"] }
               }
             },
             {
@@ -588,7 +588,7 @@
               "request": {
                 "method": "DELETE",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8099/api/v1/proveedores/1", "protocol": "http", "host": ["localhost"], "port": "8099", "path": ["api", "v1", "proveedores", "1"] }
+                "url": { "raw": "http://localhost:8090/api/v1/proveedores/1", "protocol": "http", "host": ["localhost"], "port": "8090", "path": ["api", "v1", "proveedores", "1"] }
               }
             }
           ]
@@ -717,14 +717,14 @@
           ]
         },
         {
-          "name": "Pagos (8086)",
+          "name": "Pagos (8083)",
           "item": [
             {
               "name": "GET Listar pagos",
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8086/api/v1/pagos", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "pagos"] }
+                "url": { "raw": "http://localhost:8083/api/v1/pagos", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["api", "v1", "pagos"] }
               }
             },
             {
@@ -732,7 +732,7 @@
               "request": {
                 "method": "GET",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8086/api/v1/pagos/1", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "pagos", "1"] }
+                "url": { "raw": "http://localhost:8083/api/v1/pagos/1", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["api", "v1", "pagos", "1"] }
               }
             },
             {
@@ -747,7 +747,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"ventaId\": 1,\n  \"monto\": 500.0,\n  \"metodoPago\": \"TARJETA\",\n  \"estado\": \"PENDIENTE\"\n}"
                 },
-                "url": { "raw": "http://localhost:8086/api/v1/pagos", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "pagos"] }
+                "url": { "raw": "http://localhost:8083/api/v1/pagos", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["api", "v1", "pagos"] }
               }
             },
             {
@@ -762,7 +762,7 @@
                   "mode": "raw",
                   "raw": "{\n  \"ventaId\": 1,\n  \"monto\": 750.0,\n  \"metodoPago\": \"EFECTIVO\",\n  \"estado\": \"PAGADO\"\n}"
                 },
-                "url": { "raw": "http://localhost:8086/api/v1/pagos/1", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "pagos", "1"] }
+                "url": { "raw": "http://localhost:8083/api/v1/pagos/1", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["api", "v1", "pagos", "1"] }
               }
             },
             {
@@ -770,7 +770,7 @@
               "request": {
                 "method": "DELETE",
                 "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
-                "url": { "raw": "http://localhost:8086/api/v1/pagos/1", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "pagos", "1"] }
+                "url": { "raw": "http://localhost:8083/api/v1/pagos/1", "protocol": "http", "host": ["localhost"], "port": "8083", "path": ["api", "v1", "pagos", "1"] }
               }
             }
           ]
