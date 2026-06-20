@@ -1,0 +1,899 @@
+{
+  "info": {
+    "name": "ProyectoGestion - Parcial 3",
+    "description": "Colección de endpoints para los 15 microservicios del sistema de gestión. Incluye RRHH, Inventario y Operaciones.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "token", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "INTEGRANTE 1 - Gestión RRHH",
+      "item": [
+        {
+          "name": "Empleados (8080)",
+          "item": [
+            {
+              "name": "GET Listar empleados",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8080/api/v1/empleados", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "v1", "empleados"] }
+              }
+            },
+            {
+              "name": "GET Obtener empleado por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8080/api/v1/empleados/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "v1", "empleados", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear empleado",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Juan\",\n  \"apellido\": \"Pérez\",\n  \"email\": \"juan@empresa.com\",\n  \"telefono\": \"912345678\",\n  \"departamentoId\": 1,\n  \"cargoId\": 1\n}"
+                },
+                "url": { "raw": "http://localhost:8080/api/v1/empleados/crear", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "v1", "empleados", "crear"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar empleado",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Juan Actualizado\",\n  \"apellido\": \"Pérez\",\n  \"email\": \"juan@empresa.com\",\n  \"telefono\": \"912345678\",\n  \"departamentoId\": 1,\n  \"cargoId\": 1\n}"
+                },
+                "url": { "raw": "http://localhost:8080/api/v1/empleados/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "v1", "empleados", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar empleado",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8080/api/v1/empleados/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "v1", "empleados", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Departamentos (8091)",
+          "item": [
+            {
+              "name": "GET Listar departamentos",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8091/api/v1/departamentos", "protocol": "http", "host": ["localhost"], "port": "8091", "path": ["api", "v1", "departamentos"] }
+              }
+            },
+            {
+              "name": "GET Obtener departamento por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8091/api/v1/departamentos/1", "protocol": "http", "host": ["localhost"], "port": "8091", "path": ["api", "v1", "departamentos", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear departamento",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Tecnología\",\n  \"descripcion\": \"Departamento de TI\"\n}"
+                },
+                "url": { "raw": "http://localhost:8091/api/v1/departamentos", "protocol": "http", "host": ["localhost"], "port": "8091", "path": ["api", "v1", "departamentos"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar departamento",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Tecnología Actualizado\",\n  \"descripcion\": \"Departamento de TI y Sistemas\"\n}"
+                },
+                "url": { "raw": "http://localhost:8091/api/v1/departamentos/1", "protocol": "http", "host": ["localhost"], "port": "8091", "path": ["api", "v1", "departamentos", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar departamento",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8091/api/v1/departamentos/1", "protocol": "http", "host": ["localhost"], "port": "8091", "path": ["api", "v1", "departamentos", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Cargos (8092)",
+          "item": [
+            {
+              "name": "GET Listar cargos",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8092/api/v1/cargos", "protocol": "http", "host": ["localhost"], "port": "8092", "path": ["api", "v1", "cargos"] }
+              }
+            },
+            {
+              "name": "GET Obtener cargo por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8092/api/v1/cargos/1", "protocol": "http", "host": ["localhost"], "port": "8092", "path": ["api", "v1", "cargos", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear cargo",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Desarrollador Senior\",\n  \"descripcion\": \"Desarrollador de software senior\"\n}"
+                },
+                "url": { "raw": "http://localhost:8092/api/v1/cargos/crear", "protocol": "http", "host": ["localhost"], "port": "8092", "path": ["api", "v1", "cargos", "crear"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar cargo",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Desarrollador Senior Actualizado\",\n  \"descripcion\": \"Desarrollador full stack senior\"\n}"
+                },
+                "url": { "raw": "http://localhost:8092/api/v1/cargos/1", "protocol": "http", "host": ["localhost"], "port": "8092", "path": ["api", "v1", "cargos", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar cargo",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8092/api/v1/cargos/1", "protocol": "http", "host": ["localhost"], "port": "8092", "path": ["api", "v1", "cargos", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Autenticacion (8093)",
+          "item": [
+            {
+              "name": "POST Login",
+              "request": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+                },
+                "url": { "raw": "http://localhost:8093/api/v1/autenticacion/login", "protocol": "http", "host": ["localhost"], "port": "8093", "path": ["api", "v1", "autenticacion", "login"] }
+              }
+            },
+            {
+              "name": "POST Registrar usuario",
+              "request": {
+                "method": "POST",
+                "header": [{ "key": "Content-Type", "value": "application/json" }],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"username\": \"nuevo_usuario\",\n  \"password\": \"password123\",\n  \"email\": \"usuario@empresa.com\",\n  \"rol\": \"USER\"\n}"
+                },
+                "url": { "raw": "http://localhost:8093/api/v1/autenticacion/registrar", "protocol": "http", "host": ["localhost"], "port": "8093", "path": ["api", "v1", "autenticacion", "registrar"] }
+              }
+            },
+            {
+              "name": "GET Listar usuarios",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8093/api/v1/autenticacion/usuarios", "protocol": "http", "host": ["localhost"], "port": "8093", "path": ["api", "v1", "autenticacion", "usuarios"] }
+              }
+            },
+            {
+              "name": "GET Obtener usuario por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8093/api/v1/autenticacion/usuarios/1", "protocol": "http", "host": ["localhost"], "port": "8093", "path": ["api", "v1", "autenticacion", "usuarios", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar usuario",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8093/api/v1/autenticacion/usuarios/1", "protocol": "http", "host": ["localhost"], "port": "8093", "path": ["api", "v1", "autenticacion", "usuarios", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Auditoria (8094)",
+          "item": [
+            {
+              "name": "GET Listar auditorias",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8094/api/v1/auditoria", "protocol": "http", "host": ["localhost"], "port": "8094", "path": ["api", "v1", "auditoria"] }
+              }
+            },
+            {
+              "name": "GET Obtener auditoria por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8094/api/v1/auditoria/1", "protocol": "http", "host": ["localhost"], "port": "8094", "path": ["api", "v1", "auditoria", "1"] }
+              }
+            },
+            {
+              "name": "GET Auditorias por tabla",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8094/api/v1/auditoria/tabla/empleados", "protocol": "http", "host": ["localhost"], "port": "8094", "path": ["api", "v1", "auditoria", "tabla", "empleados"] }
+              }
+            },
+            {
+              "name": "GET Auditorias por usuario",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8094/api/v1/auditoria/usuario/admin", "protocol": "http", "host": ["localhost"], "port": "8094", "path": ["api", "v1", "auditoria", "usuario", "admin"] }
+              }
+            },
+            {
+              "name": "POST Registrar auditoria",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tabla\": \"empleados\",\n  \"accion\": \"CREATE\",\n  \"usuario\": \"admin\",\n  \"detalle\": \"Creación de empleado ID 1\"\n}"
+                },
+                "url": { "raw": "http://localhost:8094/api/v1/auditoria/registrar", "protocol": "http", "host": ["localhost"], "port": "8094", "path": ["api", "v1", "auditoria", "registrar"] }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INTEGRANTE 2 - Gestión Inventario",
+      "item": [
+        {
+          "name": "Almacenes (8095)",
+          "item": [
+            {
+              "name": "GET Listar almacenes",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8095/api/v1/almacenes", "protocol": "http", "host": ["localhost"], "port": "8095", "path": ["api", "v1", "almacenes"] }
+              }
+            },
+            {
+              "name": "GET Obtener almacen por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8095/api/v1/almacenes/1", "protocol": "http", "host": ["localhost"], "port": "8095", "path": ["api", "v1", "almacenes", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear almacen",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Almacen Central\",\n  \"ubicacion\": \"Calle Mayor 10\"\n}"
+                },
+                "url": { "raw": "http://localhost:8095/api/v1/almacenes", "protocol": "http", "host": ["localhost"], "port": "8095", "path": ["api", "v1", "almacenes"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar almacen",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Almacen Norte\",\n  \"ubicacion\": \"Av. Norte 5\"\n}"
+                },
+                "url": { "raw": "http://localhost:8095/api/v1/almacenes/1", "protocol": "http", "host": ["localhost"], "port": "8095", "path": ["api", "v1", "almacenes", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar almacen",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8095/api/v1/almacenes/1", "protocol": "http", "host": ["localhost"], "port": "8095", "path": ["api", "v1", "almacenes", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Existencias (8096)",
+          "item": [
+            {
+              "name": "GET Listar existencias",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8096/api/v1/existencias", "protocol": "http", "host": ["localhost"], "port": "8096", "path": ["api", "v1", "existencias"] }
+              }
+            },
+            {
+              "name": "GET Obtener existencia por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8096/api/v1/existencias/1", "protocol": "http", "host": ["localhost"], "port": "8096", "path": ["api", "v1", "existencias", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear existencia",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"referencia\": \"REF-001\",\n  \"cantidad\": 100.00\n}"
+                },
+                "url": { "raw": "http://localhost:8096/api/v1/existencias", "protocol": "http", "host": ["localhost"], "port": "8096", "path": ["api", "v1", "existencias"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar existencia",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"referencia\": \"REF-001\",\n  \"cantidad\": 200.00\n}"
+                },
+                "url": { "raw": "http://localhost:8096/api/v1/existencias/1", "protocol": "http", "host": ["localhost"], "port": "8096", "path": ["api", "v1", "existencias", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar existencia",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8096/api/v1/existencias/1", "protocol": "http", "host": ["localhost"], "port": "8096", "path": ["api", "v1", "existencias", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ordenes de Compra (8097)",
+          "item": [
+            {
+              "name": "GET Listar ordenes de compra",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8097/api/v1/ordenescompra", "protocol": "http", "host": ["localhost"], "port": "8097", "path": ["api", "v1", "ordenescompra"] }
+              }
+            },
+            {
+              "name": "GET Obtener orden de compra por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8097/api/v1/ordenescompra/1", "protocol": "http", "host": ["localhost"], "port": "8097", "path": ["api", "v1", "ordenescompra", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear orden de compra",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"numero\": \"OC-2024-001\",\n  \"estado\": \"PENDIENTE\",\n  \"proveedorId\": 1\n}"
+                },
+                "url": { "raw": "http://localhost:8097/api/v1/ordenescompra", "protocol": "http", "host": ["localhost"], "port": "8097", "path": ["api", "v1", "ordenescompra"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar orden de compra",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"numero\": \"OC-2024-001\",\n  \"estado\": \"APROBADA\",\n  \"proveedorId\": 1\n}"
+                },
+                "url": { "raw": "http://localhost:8097/api/v1/ordenescompra/1", "protocol": "http", "host": ["localhost"], "port": "8097", "path": ["api", "v1", "ordenescompra", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar orden de compra",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8097/api/v1/ordenescompra/1", "protocol": "http", "host": ["localhost"], "port": "8097", "path": ["api", "v1", "ordenescompra", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Productos (8098)",
+          "item": [
+            {
+              "name": "GET Listar productos",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8098/api/v1/productos", "protocol": "http", "host": ["localhost"], "port": "8098", "path": ["api", "v1", "productos"] }
+              }
+            },
+            {
+              "name": "GET Obtener producto por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8098/api/v1/productos/1", "protocol": "http", "host": ["localhost"], "port": "8098", "path": ["api", "v1", "productos", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear producto",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Laptop Pro\",\n  \"codigo\": \"LAP-001\"\n}"
+                },
+                "url": { "raw": "http://localhost:8098/api/v1/productos", "protocol": "http", "host": ["localhost"], "port": "8098", "path": ["api", "v1", "productos"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar producto",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Laptop Pro X\",\n  \"codigo\": \"LAP-002\"\n}"
+                },
+                "url": { "raw": "http://localhost:8098/api/v1/productos/1", "protocol": "http", "host": ["localhost"], "port": "8098", "path": ["api", "v1", "productos", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar producto",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8098/api/v1/productos/1", "protocol": "http", "host": ["localhost"], "port": "8098", "path": ["api", "v1", "productos", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Proveedores (8099)",
+          "item": [
+            {
+              "name": "GET Listar proveedores",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8099/api/v1/proveedores", "protocol": "http", "host": ["localhost"], "port": "8099", "path": ["api", "v1", "proveedores"] }
+              }
+            },
+            {
+              "name": "GET Obtener proveedor por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8099/api/v1/proveedores/1", "protocol": "http", "host": ["localhost"], "port": "8099", "path": ["api", "v1", "proveedores", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear proveedor",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Proveedor ABC\",\n  \"nif\": \"B12345678\"\n}"
+                },
+                "url": { "raw": "http://localhost:8099/api/v1/proveedores", "protocol": "http", "host": ["localhost"], "port": "8099", "path": ["api", "v1", "proveedores"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar proveedor",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Proveedor XYZ\",\n  \"nif\": \"C99999999\"\n}"
+                },
+                "url": { "raw": "http://localhost:8099/api/v1/proveedores/1", "protocol": "http", "host": ["localhost"], "port": "8099", "path": ["api", "v1", "proveedores", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar proveedor",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8099/api/v1/proveedores/1", "protocol": "http", "host": ["localhost"], "port": "8099", "path": ["api", "v1", "proveedores", "1"] }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INTEGRANTE 3 - Gestión Operaciones",
+      "item": [
+        {
+          "name": "Clientes (8081)",
+          "item": [
+            {
+              "name": "GET Listar clientes",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8081/api/v1/clientes", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api", "v1", "clientes"] }
+              }
+            },
+            {
+              "name": "GET Obtener cliente por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8081/api/v1/clientes/1", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api", "v1", "clientes", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear cliente",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Juan\",\n  \"apellido\": \"Pérez\",\n  \"email\": \"juan@example.com\",\n  \"telefono\": \"123456789\",\n  \"direccion\": \"Calle 1\"\n}"
+                },
+                "url": { "raw": "http://localhost:8081/api/v1/clientes", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api", "v1", "clientes"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar cliente",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Juan Carlos\",\n  \"apellido\": \"Pérez\",\n  \"email\": \"juan@example.com\",\n  \"telefono\": \"123456789\",\n  \"direccion\": \"Calle 2\"\n}"
+                },
+                "url": { "raw": "http://localhost:8081/api/v1/clientes/1", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api", "v1", "clientes", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar cliente",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8081/api/v1/clientes/1", "protocol": "http", "host": ["localhost"], "port": "8081", "path": ["api", "v1", "clientes", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Ventas (8082)",
+          "item": [
+            {
+              "name": "GET Listar ventas",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8082/api/v1/ventas", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "v1", "ventas"] }
+              }
+            },
+            {
+              "name": "GET Obtener venta por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8082/api/v1/ventas/1", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "v1", "ventas", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear venta",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clienteId\": 1,\n  \"empleadoId\": 2,\n  \"producto\": \"Laptop\",\n  \"cantidad\": 2,\n  \"precioUnitario\": 1500.0\n}"
+                },
+                "url": { "raw": "http://localhost:8082/api/v1/ventas", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "v1", "ventas"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar venta",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"clienteId\": 1,\n  \"empleadoId\": 2,\n  \"producto\": \"Laptop Pro\",\n  \"cantidad\": 3,\n  \"precioUnitario\": 2000.0\n}"
+                },
+                "url": { "raw": "http://localhost:8082/api/v1/ventas/1", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "v1", "ventas", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar venta",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8082/api/v1/ventas/1", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "v1", "ventas", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Pagos (8086)",
+          "item": [
+            {
+              "name": "GET Listar pagos",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8086/api/v1/pagos", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "pagos"] }
+              }
+            },
+            {
+              "name": "GET Obtener pago por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8086/api/v1/pagos/1", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "pagos", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear pago",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ventaId\": 1,\n  \"monto\": 500.0,\n  \"metodoPago\": \"TARJETA\",\n  \"estado\": \"PENDIENTE\"\n}"
+                },
+                "url": { "raw": "http://localhost:8086/api/v1/pagos", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "pagos"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar pago",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ventaId\": 1,\n  \"monto\": 750.0,\n  \"metodoPago\": \"EFECTIVO\",\n  \"estado\": \"PAGADO\"\n}"
+                },
+                "url": { "raw": "http://localhost:8086/api/v1/pagos/1", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "pagos", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar pago",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8086/api/v1/pagos/1", "protocol": "http", "host": ["localhost"], "port": "8086", "path": ["api", "v1", "pagos", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Reportes (8084)",
+          "item": [
+            {
+              "name": "GET Listar reportes",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8084/api/v1/reportes", "protocol": "http", "host": ["localhost"], "port": "8084", "path": ["api", "v1", "reportes"] }
+              }
+            },
+            {
+              "name": "GET Obtener reporte por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8084/api/v1/reportes/1", "protocol": "http", "host": ["localhost"], "port": "8084", "path": ["api", "v1", "reportes", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear reporte",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tipo\": \"VENTAS\",\n  \"descripcion\": \"Reporte mensual de ventas\"\n}"
+                },
+                "url": { "raw": "http://localhost:8084/api/v1/reportes", "protocol": "http", "host": ["localhost"], "port": "8084", "path": ["api", "v1", "reportes"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar reporte",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"tipo\": \"INVENTARIO\",\n  \"descripcion\": \"Reporte de inventario actualizado\"\n}"
+                },
+                "url": { "raw": "http://localhost:8084/api/v1/reportes/1", "protocol": "http", "host": ["localhost"], "port": "8084", "path": ["api", "v1", "reportes", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar reporte",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8084/api/v1/reportes/1", "protocol": "http", "host": ["localhost"], "port": "8084", "path": ["api", "v1", "reportes", "1"] }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Notificaciones (8085)",
+          "item": [
+            {
+              "name": "GET Listar notificaciones",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8085/api/v1/notificaciones", "protocol": "http", "host": ["localhost"], "port": "8085", "path": ["api", "v1", "notificaciones"] }
+              }
+            },
+            {
+              "name": "GET Obtener notificacion por ID",
+              "request": {
+                "method": "GET",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8085/api/v1/notificaciones/1", "protocol": "http", "host": ["localhost"], "port": "8085", "path": ["api", "v1", "notificaciones", "1"] }
+              }
+            },
+            {
+              "name": "POST Crear notificacion",
+              "request": {
+                "method": "POST",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"titulo\": \"Bienvenida\",\n  \"mensaje\": \"Mensaje de bienvenida\",\n  \"destinatario\": \"usuario@test.com\",\n  \"estado\": \"PENDIENTE\"\n}"
+                },
+                "url": { "raw": "http://localhost:8085/api/v1/notificaciones", "protocol": "http", "host": ["localhost"], "port": "8085", "path": ["api", "v1", "notificaciones"] }
+              }
+            },
+            {
+              "name": "PUT Actualizar notificacion",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  { "key": "Authorization", "value": "Bearer {{token}}" },
+                  { "key": "Content-Type", "value": "application/json" }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"titulo\": \"Actualización\",\n  \"mensaje\": \"Nuevo mensaje\",\n  \"destinatario\": \"otro@test.com\",\n  \"estado\": \"ENVIADO\"\n}"
+                },
+                "url": { "raw": "http://localhost:8085/api/v1/notificaciones/1", "protocol": "http", "host": ["localhost"], "port": "8085", "path": ["api", "v1", "notificaciones", "1"] }
+              }
+            },
+            {
+              "name": "DELETE Eliminar notificacion",
+              "request": {
+                "method": "DELETE",
+                "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+                "url": { "raw": "http://localhost:8085/api/v1/notificaciones/1", "protocol": "http", "host": ["localhost"], "port": "8085", "path": ["api", "v1", "notificaciones", "1"] }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS clientes (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    telefono VARCHAR(20),
+    direccion VARCHAR(200),
+    estado VARCHAR(20) DEFAULT 'ACTIVO'
+);

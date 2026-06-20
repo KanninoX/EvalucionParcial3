@@ -1,0 +1,119 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        # ===== INTEGRANTE 1 - RRHH =====
+
+        # Autenticacion (8093) - login y registro son públicos
+        - id: autenticacion-service
+          uri: http://localhost:8093
+          predicates:
+            - Path=/api/v1/autenticacion/**
+
+        # Empleados (8080)
+        - id: empleados-service
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/empleados/**
+
+        # Departamentos (8091)
+        - id: departamentos-service
+          uri: http://localhost:8091
+          predicates:
+            - Path=/api/v1/departamentos/**
+
+        # Cargos (8092)
+        - id: cargos-service
+          uri: http://localhost:8092
+          predicates:
+            - Path=/api/v1/cargos/**
+
+        # Auditoria (8094)
+        - id: auditoria-service
+          uri: http://localhost:8094
+          predicates:
+            - Path=/api/v1/auditoria/**
+
+        # ===== INTEGRANTE 2 - INVENTARIO =====
+
+        # Productos (8089)
+        - id: productos-service
+          uri: http://localhost:8089
+          predicates:
+            - Path=/api/v1/productos/**
+
+        # Proveedores (8090)
+        - id: proveedores-service
+          uri: http://localhost:8090
+          predicates:
+            - Path=/api/v1/proveedores/**
+
+        # Almacenes (8086)
+        - id: almacenes-service
+          uri: http://localhost:8086
+          predicates:
+            - Path=/api/v1/almacenes/**
+
+        # Existencias (8087)
+        - id: existencias-service
+          uri: http://localhost:8087
+          predicates:
+            - Path=/api/v1/existencias/**
+
+        # Ordenes de Compra (8088)
+        - id: ordenescompra-service
+          uri: http://localhost:8088
+          predicates:
+            - Path=/api/v1/ordenescompra/**
+
+        # ===== INTEGRANTE 3 - OPERACIONES =====
+
+        # Clientes (8081)
+        - id: clientes-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/v1/clientes/**
+
+        # Ventas (8082)
+        - id: ventas-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/v1/ventas/**
+
+        # Pagos (8083)
+        - id: pagos-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/v1/pagos/**
+
+        # Reportes (8084)
+        - id: reportes-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/v1/reportes/**
+
+        # Notificaciones (8085)
+        - id: notificaciones-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/v1/notificaciones/**
+
+        # Operaciones (8095)
+        - id: operaciones-service
+          uri: http://localhost:8095
+          predicates:
+            - Path=/api/v1/operaciones/**
+
+jwt:
+  secret: GestionRRHH2024SecretKeyForJWTValidationIntegrante1
+
+logging:
+  level:
+    com.gestion.gateway: DEBUG
+    org.springframework.cloud.gateway: INFO

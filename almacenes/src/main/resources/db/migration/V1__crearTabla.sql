@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS almacen (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL,
+    ubicacion VARCHAR(255),
+    estado VARCHAR(50) DEFAULT 'ACTIVO',
+    PRIMARY KEY (id)
+);

@@ -1,0 +1,1 @@
+ALTER TABLE orden_compra ADD COLUMN IF NOT EXISTS cliente_id BIGINT;

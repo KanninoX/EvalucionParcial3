@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS producto (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(255) NOT NULL,
+    codigo VARCHAR(100),
+    estado VARCHAR(50) DEFAULT 'ACTIVO',
+    PRIMARY KEY (id)
+);

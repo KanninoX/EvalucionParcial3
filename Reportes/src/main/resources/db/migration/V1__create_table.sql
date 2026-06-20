@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS reportes (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(100) NOT NULL,
+    descripcion VARCHAR(500),
+    estado VARCHAR(20) DEFAULT 'ACTIVO',
+    fecha DATETIME
+);

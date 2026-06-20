@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS notificaciones (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(200) NOT NULL,
+    mensaje TEXT NOT NULL,
+    destinatario VARCHAR(200) NOT NULL,
+    estado VARCHAR(20) DEFAULT 'PENDIENTE',
+    fecha DATETIME
+);
